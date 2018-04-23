@@ -1,3 +1,0 @@
-Hello fro GitHub!
-
-version 01
