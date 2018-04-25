@@ -1,5 +1,5 @@
 var a = [4, 5, 6, 2];
-var b = [3, 8, 11, 9];
+var b = [3, 8, 9, 11];
 var c = [];
 
 for (k = 0, i = 0, j = 0; k < (a.length + b.length); k++) {
