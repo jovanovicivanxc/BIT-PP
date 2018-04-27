@@ -42,5 +42,12 @@ function humanANumb(num) {
     return b;
 }
 
-var c = humanANumb(18);
+var c = humanANumb(101);
 console.log(c);
+
+
+// 1   2   3
+// 1   21  121
+// 1   11  111
+// 2   12  112
+// 2   22  122
