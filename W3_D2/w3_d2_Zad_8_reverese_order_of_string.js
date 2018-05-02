@@ -1,6 +1,9 @@
+'use strict'
+
 var reverseOrder = function (a) {
-    var b = ""
-    for (i = 0, j = a.length - 1; i < a.length, j >= 0; i++ , j--) {
+    var b = "";
+    var j;
+    for (var i = 0, j = a.length - 1; i < a.length, j >= 0; i++ , j--) {
         var tmp = a[j];
         a[j] = b[i];
         b[i] = tmp;

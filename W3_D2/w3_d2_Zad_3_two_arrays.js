@@ -1,6 +1,9 @@
+'use strict'
+
 var twoArrays = function (a, b) {
     var mark;
     var sent = "";
+    var i;
 
     for (i = 0; i < a.length; i++) {
 

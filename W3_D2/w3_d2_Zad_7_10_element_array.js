@@ -1,7 +1,9 @@
+'use strict'
+
 var firstTwoLett = function (a) {
 
     var word = ""
-    for (i = 0; i < a.length; i++) {
+    for (var i = 0; i < a.length; i++) {
 
         if (typeof a[i] === 'string' && a[i].length > 1) {
             word += a[i][0] + a[i][1];

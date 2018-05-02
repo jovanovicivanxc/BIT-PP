@@ -1,6 +1,9 @@
+'use strict'
+
 var switchPlaces = function (a) {
     var min = a[0];
-    indexMin = 0;
+    var indexMin = 0;
+    var i;
 
     for (i = 1; i < a.length; i++) {
         if (a[i] < min) {
@@ -8,8 +11,8 @@ var switchPlaces = function (a) {
             indexMin = i;
         }
     }
-    max = a[0];
-    indexMax = 0;
+    var max = a[0];
+    var indexMax = 0;
 
     for (i = 1; i < a.length; i++) {
         if (a[i] > max) {
@@ -17,7 +20,7 @@ var switchPlaces = function (a) {
             indexMax = i;
         }
     }
-    tmp = a[indexMax];
+    var tmp = a[indexMax];
     a[indexMax] = a[indexMin];
     a[indexMin] = tmp;
 

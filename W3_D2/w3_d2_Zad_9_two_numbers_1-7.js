@@ -1,16 +1,9 @@
-var combinations = function (a, b) {
-    var sum;
-    for (i = a; i <= b; i++) {
-        for (j = a; j <= b; j++) {
-            if (i === j) {
-                continue;
-            } sum = (i, j);
-        }
-    }
-    return sum;
+// 'use strict'
+
+var combinations = function (a, b) 
 
 
-
+    return res;
 }
 var c = 1;
 var d = 7;

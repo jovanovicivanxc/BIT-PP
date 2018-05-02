@@ -1,3 +1,5 @@
+'use strict'
+
 var divAndAdd = function (a) {
     var i;
     for (i = 0; i < a.length; i++) {

@@ -1,9 +1,11 @@
+'use strict'
+
 var sortArrays = function (a) {
-    for (i = 0; i < a.length; i++) {
+    for (var i = 0; i < a.length; i++) {
 
         var maxIndex = i;
 
-        for (j = i + 1; j < a.length; j++) {
+        for (var j = i + 1; j < a.length; j++) {
             if (a[j] > a[maxIndex]) {
                 maxIndex = j;
             }
