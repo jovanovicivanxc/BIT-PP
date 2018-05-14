@@ -79,46 +79,71 @@
     var action = new Genre("action");
     // console.log(action.getData());
 
-    var terminator = new Movie("Terminator", "Action", 120)
-    var betman = new Movie("Betman", "SF", 130)
+    try {
+        var terminator = new Movie("Terminator", "Action", 85)
+        var betman = new Movie("Betman", "SF", 130)
 
-    var deadpool = new Movie("Deadpool", "Comedy", 95);
-    var deadpool2 = new Movie("Deadpool2", "Comedy", 95);
+        var deadpool = new Movie("Deadpool", "Comedy", 95);
+        var deadpool2 = new Movie("Deadpool2", "Comedy", 89);
+
+        var program1 = new Program("11/06/2018");
+        program1.addMovie(terminator);
+        program1.addMovie(betman);
+
+        var program2 = new Program("11/07/2018");
+        program2.addMovie(deadpool);
+        program2.addMovie(deadpool2);
+
+        if (typeof (terminator.length) != "number" ||
+            typeof (betman.length) != "number" ||
+            typeof (deadpool.length) != "number" ||
+            typeof (deadpool2.length) != "number") {
+            throw new TypeError("Type Error: Movie length is not a number!");
+        }
+        else if (program1.list.length > 4) {
+            throw new RangeError("Range Error: Maximum number of movies exceeded!")
+        }
+        else {
+            // console.log(terminator.getData());
 
 
-    // console.log(terminator.getData());
 
-    var program1 = new Program("11/06/2018");
-    program1.addMovie(terminator);
-    program1.addMovie(betman);
+            // console.log(program1.addMovie());
 
-    var program2 = new Program("11/07/2018");
-    program2.addMovie(deadpool);
-    program2.addMovie(deadpool2);
+            // console.log(program1.getData());
+            // console.log(program2.getData());
 
-    // console.log(program1.addMovie());
+            var festival1 = new Festival('Cannes');
+            festival1.addProgram(program1);
+            festival1.addProgram(program2);
 
-    // console.log(program1.getData());
-    // console.log(program2.getData());
+            console.log(festival1.getData());
 
-    var festival1 = new Festival('Cannes');
-    festival1.addProgram(program1);
-    festival1.addProgram(program2);
+            function createMovie(title, genre, length) {
+                return new Movie(title, genre, length)
+            }
 
-    console.log(festival1.getData());
+            var superman = createMovie("Superman", "Action", 150);
 
-    function createMovie(title, genre, length) {
-        return new Movie(title, genre, length)
+            function createProgram(date) {
+                return new Program(date);
+            }
+
+            var firstFest = createProgram("05 / 05 / 2018");
+            var secondFest = createProgram("06 / 05 / 2018");
+
+        }
+    } catch (e) {
+        if (e instanceof TypeError) {
+            console.log(e.message);
+        }
+        else if (e instanceof RangeError) {
+            console.log(e.message);
+
+        }
     }
 
-    var superman = createMovie("Superman", "Action", 150);
 
-    function createProgram(date) {
-        return new Program(date);
-    }
-
-    var firstFest = createProgram("05 / 05 / 2018");
-    var secondFest = createProgram("06 / 05 / 2018");
 
 
 })();
