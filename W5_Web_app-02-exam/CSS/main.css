@@ -1,0 +1,38 @@
+#head {
+    background-image: url(../image.png);
+    background-size: cover;
+    
+}
+
+.totalStudents, .examStats {
+    color: white;
+    text-align: center;
+}
+
+.examStats {
+padding-top: 50px;
+
+}
+.totalStudents {
+    font-size: 25px;
+    margin: auto;
+    
+}
+
+#passed, #failed {
+    width: 300px;
+    height: 40px;
+    margin: 10px auto;
+    line-height: 40px;
+    padding: 5px;
+}
+
+#passed {
+background-color: darkcyan;
+}
+
+#failed {
+    background-color: rgb(230, 84, 84);
+    }
+    
+    

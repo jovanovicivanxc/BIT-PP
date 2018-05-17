@@ -28,29 +28,31 @@ function Program(date) {
 Program.prototype.addMovie = function (movie) {
     if (movie instanceof Movie) {
         this.list.push(movie);
+        this.number++;
     }
     return this.list;
 }
-Program.prototype.getData = function () {
-    var text = "";
-    if (this.list.length != 0) {
-        for (var i = 0; i < this.list.length; i++) {
-            var text = text + this.list[i].title + ', ' + this.list[i].length + ', ' + this.list[i].genre.getData() + "\n";
-        }
-        var dateString = this.date.getDate() + "." + this.date.getMonth() + "." + this.date.getFullYear();
-        return dateString + ', ' + this.totalLength() + "min" + "\n" + text;
-    }
-    else {
-        return this.date.toDateString() + " program duration: TBA";
-    }
-}
 
-Program.prototype.totalLength = function (params) {
+Program.prototype.totalLength = function () {
     var total = 0;
     for (var i = 0; i < this.list.length; i++) {
         total += this.list[i].length;
     }
     return total;
+}
+
+Program.prototype.getData = function () {
+    var text = "";
+    if (this.list.length != 0) {
+        // for (var i = 0; i < this.list.length; i++) {
+        //     var text = text + this.list[i].title + ', ' + this.list[i].length + ', ' + this.list[i].genre.getData() + "\n";
+        // }
+        var dateString = this.date.getDate() + "." + this.date.getMonth() + "." + this.date.getFullYear();
+        return dateString + ', duration: ' + this.totalLength() + "min, " + this.number + " movies";
+    }
+    else {
+        return this.date.toDateString() + " program duration: TBA";
+    }
 }
 
 function Festival(name) {
