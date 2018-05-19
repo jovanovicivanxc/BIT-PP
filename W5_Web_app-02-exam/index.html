@@ -11,15 +11,15 @@
 <body>
 
     <div class="top">
-        <div class="exam">
+        <div class="exam" id="exam">
             <div class="exam-title">
                 Exam statistic
                 <span class="exam-title-month">June</span>
             </div>
 
-            <div class="exam-total">Total students: %count%</div>
+            <div class="exam-total" id="total_students">Total students:</div>
 
-            <div class="exam-passed clearfix">
+            <div class="exam-passed clearfix" id="exam passed">
                 <div class="exam-passed-text">passed</div>
                 <div class="right">
                     <div class="exam-passed-count" id="numberOfPassed">2</div>
@@ -56,14 +56,14 @@
             <div class="passed">
                 <h2 class="passed-title">passed</h2>
 
-                <div class="passed-list">
+                <div class="passed-list" id="passed-list">
 
                     <div class="item clearfix" id="passed-0">
                         <div class="item-description">Roger Federer</div>
                         <div class="right clearfix">
                             <div class="item-value">10</div>
                             <div class="item-delete">
-                                <button class="item-delete-btn">x</i>
+                                <button class="item-delete-btn" id="item-delete-btn">x</i>
                                 </button>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
             <div class="failed">
                 <h2 class="failed-title">failed</h2>
 
-                <div class="failed-list">
+                <div class="failed-list" id="failed-list">
 
                     <div class="item clearfix" id="failed-0">
                         <div class="item-description">John Doe</div>
