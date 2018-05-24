@@ -1,0 +1,31 @@
+#create-movie-button, #create-program-button, #add-movie-to-program-button {
+    background-color:rgb(44, 139, 44);
+    width: 98%;
+    color: white;
+    display: inline-block;
+    margin: 0 4px;
+    padding: 1%;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.75);
+}
+
+.container {
+    border: 2px solid black;
+    width: 960px;
+    margin: 0 auto;
+}
+.wide {
+    width: 98%;
+    margin: 2px;
+}
+
+#firstdiv, #secdiv {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+}
+
+h3 {
+    margin-top: 5px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+
+    <div class='container'>
+        <div id="firstdiv">
+            <h3>Movie</h3>
+            <label> Title
+                <br>
+                <input type="text" id="title" class='wide' placeholder="Movie title">
+            </label>
+            <br>
+            <label> Length (min)
+                <br>
+                <input type="number" id="length" class='wide' placeholder="Length in min">
+            </label>
+            <br>
+            <br>
+            <select name="genre" id="genre" class='wide'>
+                <option value="empty">-</option>
+                <option value="drama">Drama</option>
+                <option value="action">Action</option>
+                <option value="Comedy">Comedy</option>
+            </select>
+            <br>
+            <br>
+            <input type="button" value='Create movie' id="create-movie-button">
+
+
+            <div>
+                <div id='listOfMovies'></div>
+            </div>
+
+            <div>
+                <span id='error'></span>
+            </div>
+
+        </div>
+        <div id="secdiv">
+            <h3>Program</h3>
+
+            <label> Date
+                <br>
+                <input type="date" id="date" class='wide'>
+            </label>
+            <br>
+            <br>
+            <input type="button" value='Create program' id="create-program-button">
+
+            <div>
+                <div id='listOfDays'></div>
+            </div>
+            <div>
+                <span id='error'></span>
+            </div>
+            <br>
+            <span>Movie</span>
+            <select name="movie" id="movie" class='wide'>
+                <option value="empty">-</option>
+                <!-- <option value="newMovie> NewMovie </option>   -->
+            </select>
+            <br>
+            <br>
+            <span>Program</span>
+            <select name="program" id="program" class='wide'>
+                <option value="empty">-</option>
+                <!-- <option> NewProgram </option> -->
+            </select>
+            <br>
+
+            <br>
+            <input type="button" value='Add movie to program' id="add-movie-to-program-button">
+            <br>
+            <br>
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript" src="js/UIModule.js"></script>
+    <script type="text/javascript" src="js/dataModule.js"></script>
+    <script type="text/javascript" src="js/mainModule.js"></script>
+
+</body>
+
+</html>

@@ -15,7 +15,7 @@
 
 
         this.number = (function () {
-            var num;
+            let num;
             if (number == undefined) {
                 num = parseInt(Math.random() * 100);
             }
@@ -26,7 +26,7 @@
         })();
 
         this.category = (function () {
-            var cat = "E";
+            let cat = "E";
             if (category == "B") {
                 cat = "B"
             }
@@ -60,8 +60,8 @@
             return this.list;
         }
         this.getData = function () {
-            var text = "";
-            for (var i = 0; i < this.list.length; i++) {
+            let text = "";
+            for (let i = 0; i < this.list.length; i++) {
                 text += "\n" + this.list[i].getData();
             }
             return this.date + ", " + this.relation + ", " + text;
@@ -78,30 +78,30 @@
     }
 
 
-    var pera = new Person("Petar", "Petrovic");
-    var zika = new Person("Zivorad", "Zivic");
+    let pera = new Person("Petar", "Petrovic");
+    let zika = new Person("Zivorad", "Zivic");
 
     // console.log(pera.getData());
 
-    var seat1 = new Seat();
-    var seat2 = new Seat();
+    let seat1 = new Seat();
+    let seat2 = new Seat();
 
     // console.log(seat1.category);
     // console.log(seat1.number);
     // console.log(seat1.getData());
 
-    var pass1 = new Passenger(pera, seat1);
-    var pass2 = new Passenger(zika, seat2);
+    let pass1 = new Passenger(pera, seat1);
+    let pass2 = new Passenger(zika, seat2);
 
     // console.log(pass1.getData());
 
-    var let1 = new Flight("Belgrade-Instabul", "12/10/2018", );
+    let let1 = new Flight("Belgrade-Instabul", "12/10/2018", );
     let1.addPassenger(pass1);
     let1.addPassenger(pass2);
 
     // console.log(let1.list);
 
-    var aerodrom = new Airport("Nikola Tesla", );
+    let aerodrom = new Airport("Nikola Tesla", );
     aerodrom.addFlight(let1);
     console.log(aerodrom.listofFlights);
 
