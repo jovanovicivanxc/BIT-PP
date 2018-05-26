@@ -1,6 +1,6 @@
-(function () {
+(() => {
 
-    let array1 = 6;
+    let array1 = "hello";
 
     if (typeof array1 == "string") {
         firstLetter = array1[0].toUpperCase();

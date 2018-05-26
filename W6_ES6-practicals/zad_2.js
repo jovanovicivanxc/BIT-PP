@@ -1,4 +1,4 @@
-(function () {
+(() => {
     function calculatesTax(amount) {
         const tax = 20;
         return amount * tax / 100;

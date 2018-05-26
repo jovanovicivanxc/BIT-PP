@@ -1,11 +1,7 @@
-(function () {
+(() => {
     let a = ['compiler', 'transpiler', 'babel.js', 'JS standard', 'linter'];
 
-
-
-
-    // const result = a.filter(x => );
+    var result = a.filter(word => word.includes('JS') || word.includes('js'));
 
     console.log(result);
-
 })();
