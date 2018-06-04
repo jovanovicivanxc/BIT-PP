@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  width: 960px;
+  margin: auto;
+
+}
+
+.App-title {
+  text-align: center;
+  width: 960px;
+  padding: 20px;
+  color: white;
+  background-color: indianred;
+  margin: 10px auto;
+}
+
+.Footer {
+  text-align: left;
+  width: 960px;
+  padding: 20px 0 20px 100px;
+  color: white;
+  background-color: indianred;
+  margin: 10px auto;
+}
+
+.pic {
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+}
+
+.data {
+  display: inline-block;
+}
+
+p {
+  margin: 5px;
+  text-align: left;
+}
+
+.user {
+  text-align: left;
+  margin: 0px 100px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-collapse: collapse;
+}
