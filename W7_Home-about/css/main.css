@@ -1,0 +1,7 @@
+.view{
+    display: none;
+}
+
+#app .view{
+    display: block;
+}

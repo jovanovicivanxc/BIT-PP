@@ -1,0 +1,24 @@
+.landingImg {
+    padding: 10px;
+    margin: 10;
+    height: 500px;
+}
+
+.headline {
+    text-align: center;
+    margin: 15%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.navbar-dark {
+    color: white;
+}
+
+.showImg {
+    text-align: center;
+    width: 500px;
+}
+
