@@ -56,6 +56,16 @@ p {
 
 }
 
+.user-list {
+  text-align: left;
+  margin: 0px 100px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-collapse: collapse;
+}
+
+
+
 .name {
   position: absolute;
   top: 240px;
