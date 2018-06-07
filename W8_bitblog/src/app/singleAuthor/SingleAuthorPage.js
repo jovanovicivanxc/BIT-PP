@@ -1,32 +1,53 @@
 import React from 'react';
+import SingleAuthorService from '../../services/SingleAuthorService';
+import SingleAuthorItem from './SingleAuthorItem';
+
 
 class SingleAuthorPage extends React.Component {
     constructor (props) {
         super (props);
+    
+    this.state = {
+        author : "",
+     }
     }
+
+    loadSingleAuthor() {
+        SingleAuthorService.getSingleAuthor(this.props.match.params.id)
+         .then((author) => {
+            this.setState({
+              author: author,
+        })
+    })
+    }
+
+    componentDidMount () {
+        this.loadSingleAuthor();
+    }
+
+
     render () {
         return (
             <main>
-                <a> &#60; Back </a>
-                <div> <img/> <h1>Name Surname</h1> 
-                <p> username: </p>
-                <p> email: </p>
-                <p> phone: </p>
-                </div>
-
-                <div> <img/> <h1>Address</h1> 
-                <p> street: </p>
-                <p> zip: </p>
-                <p> zipcode: </p>
-                </div>
-
-                <div> <img/> <h1>Company</h1> 
-                <p> name: </p>
-                <p> slogan: </p>
-                </div>
+                <a > Back </a>
+            
+                <SingleAuthorItem author={this.state.author}/>
+              
+               
             </main>
         )
     }
 }
 
 export default SingleAuthorPage;
+                
+           
+                
+                    
+
+
+
+
+
+
+

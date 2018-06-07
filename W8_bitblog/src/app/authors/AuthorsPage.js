@@ -1,20 +1,36 @@
 import React from 'react';
+import AuthorsService from '../../services/AuthorsService';
+import AuthorsList from './AuthorsList';
 
 class AuthorsPage extends React.Component {
     constructor (props) {
         super (props);
+   
+        this.state = {
+            authors: []
+        }
     }
+
+    loadAuthors() {
+        AuthorsService.getAuthors()
+        .then((authors) => {
+            this.setState({
+                authors: authors,
+            })
+        })
+    }
+
+    componentDidMount () {
+        this.loadAuthors();
+    }
+    
+
     render () {
         return (
             <main>
-                <h1> Authors (6) </h1>
-                <ul>
-                    <li> Name Surname </li>
-                    <li> Name Surname </li>
-                    <li> Name Surname </li>
-                    <li> Name Surname </li>
-                    <li> Name Surname </li>
-                </ul>
+                <h1> Authors (N) </h1>
+                <AuthorsList authors = {this.state.authors}/>                  
+                
             </main>
         )
     }

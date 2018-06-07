@@ -5,7 +5,7 @@ class UserService {
     getPosts () {
         return fetch(`${serviceUrl}posts`).then(response => response.json())
         .then((data) => {
-            return data.map((post) => new Post(post.title, post.body))
+            return data.map((post) => new Post(post.title, post.body, post.id))
         })
         }
     }
