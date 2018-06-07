@@ -1,28 +1,35 @@
 import React from 'react';
+import userService from '../../services/UserService';
+import PostsList from './PostsList';
 
 class HomePage extends React.Component {
     constructor (props) {
         super (props);
+
+        this.state = {
+            posts: []
+        }
     }
+
+    loadPosts() {
+        userService.getPosts()
+        .then((posts) => {
+            this.setState({
+                posts: posts,
+            })
+        })
+    }
+
+    componentDidMount () {
+        this.loadPosts();
+    }
+
     render () {
         return (
             <main>
                 <h1> POSTS </h1>
-                <div> <h2> Title 1 </h2> 
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-                </div>
-
-                <div> <h2> Title 2 </h2> 
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-                </div>
-
-                 <div> <h2> Title 3 </h2> 
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-                </div>
-
-                 <div> <h2> Title 4 </h2> 
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit... </p>
-                </div>
+                <PostsList posts = {this.state.posts}/>
+              
             </main>
         )
     }
