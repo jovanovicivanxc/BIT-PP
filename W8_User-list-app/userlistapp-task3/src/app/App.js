@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../logo.svg';
 import '../App.css';
-import usersData from '../data/users';
 import UserList from './UserList';
 import Tools from './Tools';
 import Header from './Header';
@@ -16,7 +15,7 @@ class App extends Component {
       selected: true,
       users: [],
       searchText: "",
-      usersLoaded: false
+      usersLoaded: true,
     }
     this.handleHeaderClick = this.handleHeaderClick.bind(this);
     this.searcherOfText = this.searcherOfText.bind(this);
@@ -31,7 +30,7 @@ class App extends Component {
       .then((data) => {
         this.setState({
           users: data.results,
-          users: true
+          usersLoaded: false,
         })
       })
   }
@@ -51,7 +50,7 @@ class App extends Component {
   render() {
     return (
       <div className="App" >
-        <Header handler={this.handleHeaderClick} refresher={this.loadUsers.bind(this)} selected={this.state.selected}/>
+        <Header handler={this.handleHeaderClick} refresher={this.loadUsers.bind(this)} selected={this.state.selected} />
         <SearchBox searcher={this.searcherOfText} />
         <Counter users={this.state.users} />
         <UserList users={this.state.users} selected={this.state.selected} searchText={this.state.searchText} />

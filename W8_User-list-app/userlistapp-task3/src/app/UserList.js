@@ -12,14 +12,14 @@ class UserList extends Component {
     render() {
         return (
             <div>
-                {/* <Loading/> */}
+                {/* <Loading /> */}
                 <br />
-                {this.props.usersLoaded ? <Loading/> : (
-                     this.props.users
-                    .filter(user => user.name.first.includes(this.props.searchText) || user.name.last.includes(this.props.searchText))
-                    .map((user, i) => {
-                        return ((this.props.selected) ? <List user={user} key={i} /> : <Card user={user} key={i} />) 
-                }))}
+                {this.props.usersLoaded ? <Loading /> : (
+                    this.props.users
+                        .filter(user => user.name.first.includes(this.props.searchText) || user.name.last.includes(this.props.searchText))
+                        .map((user, i) => {
+                            return ((this.props.selected) ? <List user={user} key={i} /> : <Card user={user} key={i} />)
+                        }))}
             </div>
         );
     }
