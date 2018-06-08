@@ -3,8 +3,8 @@ import userService from '../../services/UserService';
 import PostsList from './PostsList';
 
 class HomePage extends React.Component {
-    constructor (props) {
-        super (props);
+    constructor(props) {
+        super(props);
 
         this.state = {
             posts: []
@@ -13,23 +13,28 @@ class HomePage extends React.Component {
 
     loadPosts() {
         userService.getPosts()
-        .then((posts) => {
-            this.setState({
-                posts: posts,
+            .then((posts) => {
+                this.setState({
+                    posts: posts,
+                })
             })
-        })
     }
 
-    componentDidMount () {
+    componentDidMount() {
         this.loadPosts();
     }
 
-    render () {
+    render() {
         return (
             <main>
-                <h1> POSTS </h1>
-                <PostsList posts = {this.state.posts}/>
-              
+                <br />
+                <br />
+                <br />
+                <br />
+
+                <h2> POSTS </h2>
+                <PostsList posts={this.state.posts} />
+
             </main>
         )
     }

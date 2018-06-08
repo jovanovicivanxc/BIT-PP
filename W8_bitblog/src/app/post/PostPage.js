@@ -1,43 +1,62 @@
 import React from 'react';
 import SinglePostService from '../../services/SinglePostService';
+import MorePostsService from '../../services/MorePostsService';
 import SinglePostItem from './SinglePostItem';
+import MorePostsList from './MorePostsList';
+import { Link } from 'react-router-dom';
+
 
 
 class PostPage extends React.Component {
-    constructor (props) {
-        super (props);
-    
-    this.state = {
-        post : "",
-     }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            post: "",
+            morePosts: []
+        }
     }
 
     loadSinglePost() {
         SinglePostService.getSinglePost(this.props.match.params.id)
-         .then((post) => {
-            this.setState({
-              post: post,
-        })
-    })
+            .then((post) => {
+                this.setState({
+                    post: post,
+                })
+                this.loadMorePosts(post.userId);
+            })
     }
 
-    componentDidMount () {
+    loadMorePosts(id) {
+        MorePostsService.getMorePosts(this.props.match.params.id)
+            .then((morePosts) => {
+                this.setState({
+                    morePosts: morePosts,
+                })
+            })
+    }
+
+    componentDidMount() {
         this.loadSinglePost();
     }
 
-
-    render () {
+    render() {
         return (
             <main>
-                <a > Back </a>
-            
-                <SinglePostItem post={this.state.post}/>
-                <hr/>
+                <br />
+                <br />
+                <br />
+                <br />
+                <p className="back">
+                    <Link to="/"> &#60; Back </Link>
+                </p>
+
+                <SinglePostItem post={this.state.post} />
+                <hr />
                 <div>
-                    <h3> 3 more posts from same author </h3>
-                <a> Title 10 - velit, vulitate </a>
-                <a> Title 11 - velit, vulitate </a>
-                <a> Title 12 - velit, vulitate </a>
+                    <h5> ({this.state.morePosts.length}) more posts from same author </h5>
+                <MorePostsList morePosts={this.state.morePosts} />
+                    
                 </div>
             </main>
         )
@@ -45,10 +64,10 @@ class PostPage extends React.Component {
 }
 
 export default PostPage;
-                
-           
-                
-                    
+
+
+
+
 
 
 

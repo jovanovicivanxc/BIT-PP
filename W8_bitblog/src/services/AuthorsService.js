@@ -1,7 +1,6 @@
 import serviceUrl from '../shared/Constants';
 import Author from '../entities/Author';
 
-
 class AuthorsService {
     getAuthors () {
         return fetch(`${serviceUrl}users`).then(response => response.json())

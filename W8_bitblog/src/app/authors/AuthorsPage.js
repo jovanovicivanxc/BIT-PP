@@ -3,9 +3,9 @@ import AuthorsService from '../../services/AuthorsService';
 import AuthorsList from './AuthorsList';
 
 class AuthorsPage extends React.Component {
-    constructor (props) {
-        super (props);
-   
+    constructor(props) {
+        super(props);
+
         this.state = {
             authors: []
         }
@@ -13,24 +13,30 @@ class AuthorsPage extends React.Component {
 
     loadAuthors() {
         AuthorsService.getAuthors()
-        .then((authors) => {
-            this.setState({
-                authors: authors,
+            .then((authors) => {
+                this.setState({
+                    authors: authors,
+                })
             })
-        })
     }
 
-    componentDidMount () {
+    componentDidMount() {
         this.loadAuthors();
     }
-    
 
-    render () {
+
+    render() {
         return (
             <main>
-                <h1> Authors (N) </h1>
-                <AuthorsList authors = {this.state.authors}/>                  
-                
+                <br />
+                <br />
+                <br />
+                <br />
+                <h2> Authors ({this.state.authors.length}) </h2>
+                <br />
+
+                <AuthorsList authors={this.state.authors} />
+
             </main>
         )
     }
