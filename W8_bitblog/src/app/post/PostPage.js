@@ -17,8 +17,8 @@ class PostPage extends React.Component {
         }
     }
 
-    loadSinglePost() {
-        SinglePostService.getSinglePost(this.props.match.params.id)
+    loadSinglePost(id) {
+        SinglePostService.getSinglePost(id)
             .then((post) => {
                 this.setState({
                     post: post,
@@ -37,7 +37,11 @@ class PostPage extends React.Component {
     }
 
     componentDidMount() {
-        this.loadSinglePost();
+        this.loadSinglePost(this.props.match.params.id);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.loadSinglePost(nextProps.match.params.id);
     }
 
     render() {
@@ -55,8 +59,8 @@ class PostPage extends React.Component {
                 <hr />
                 <div>
                     <h5> ({this.state.morePosts.length}) more posts from same author </h5>
-                <MorePostsList morePosts={this.state.morePosts} />
-                    
+                    <MorePostsList morePosts={this.state.morePosts} />
+
                 </div>
             </main>
         )

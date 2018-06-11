@@ -6,10 +6,10 @@ const Header = (props) => {
         <header>
             <h2 className="nav-bit"> BIT BLOG </h2>
             <ul className="nav">
+                <li className="nav-bord"><Link to="/NewPost"> New Post</Link> </li>
                 <li className="nav"><Link to="/"> Home</Link> </li>
                 <li className="nav-bord"><Link to="/AuthorsPage"> Authors</Link></li>
                 <li className="nav"><Link to="/AboutPage"> About</Link></li>
-
             </ul>
         </header>
     )
